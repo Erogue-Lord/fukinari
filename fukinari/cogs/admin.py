@@ -21,7 +21,6 @@ class admin(commands.Cog):
     			)
 			embed.add_field(name=f"Error {dsError}", value="Eu nao posso fazer isso (#-#)")
 			await ctx.send(embed=embed)
-			
 
 def setup(client):
 	client.add_cog(admin(client))

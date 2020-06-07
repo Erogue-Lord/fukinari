@@ -5,7 +5,7 @@ import time
 import json
 import os
 from itertools import cycle
-import datetime as DT 
+import datetime as DT
 import platform
 import wmi
 
@@ -29,7 +29,7 @@ gpu = gpu_info.Name
 
 activity = discord.Game
 status = cycle(['Feito em python com muito stackoverflow', 'Use --help para obter suporte', 'Ha uma diferenca entre conhecer o caminho e percorrer o caminho.', 'Ferroxy#2071 melhor programador do mundo', 'https://github.com/Ferroxyy/fukinari'])
-token = 
+token =
 
 
 async def get_prefix(client, message):
@@ -75,7 +75,7 @@ async def changeprefix(ctx, prefix):
 
 	with open('prefixes.json','w') as file:
 		json.dump(prefixes, file, indent=4)
-	
+
 @client.command()
 async def ping(ctx):
 	await ctx.send(f'Pong! {round(client.latency * 1000)}ms')
@@ -141,11 +141,11 @@ async def unload(ctx, extension):
     		)
 		embed.add_field(name=f"Error {cmdDsErrorUnload}", value=f"Modulo {extension} ja esta descarregado (#-#)")
 		await ctx.send(embed=embed)
-		
+
 
 for filename in os.listdir('./cogs'):
 	if filename.endswith('.py'):
 		client.load_extension(f'cogs.{filename[:-3]}')
-	
 
-client.run(token)	
+if __name__ == "__main__":
+	client.run(token)
